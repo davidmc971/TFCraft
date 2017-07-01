@@ -717,7 +717,7 @@ public class TEBarrel extends NetworkTileEntity implements IInventory
 				ItemStack container = getInputStack();
 				FluidStack inLiquid = FluidContainerRegistry.getFluidForFilledItem(container);
 
-				if(container != null && container.getItem() instanceof IFluidContainerItem)
+				if(container != null && container.getItem() instanceof IFluidContainerItem && !container.hasTagCompound())
 				{
 					FluidStack isfs = ((IFluidContainerItem)container.getItem()).getFluid(container);
 					if(isfs != null && addLiquid(isfs))
