@@ -69,14 +69,14 @@ public class InventoryPlayerTFC extends InventoryPlayer {
 	public ItemStack getStackInSlot(int par1)
 	{
 		ItemStack[] aitemstack = this.mainInventory;
-		if (par1 >= this.mainInventory.length + 4)
+		if (par1 >= this.mainInventory.length + this.extraEquipInventory.length)
 		{
-		    par1-= this.mainInventory.length + 4;
-			aitemstack = this.extraEquipInventory;
+			par1 -= this.mainInventory.length + this.extraEquipInventory.length;
+			aitemstack = this.armorInventory;
 		}
 		else if(par1 >= this.mainInventory.length){
-			par1 -= this.mainInventory.length;
-			aitemstack = this.armorInventory;
+			par1-= aitemstack.length;
+			aitemstack = this.extraEquipInventory;
 		}
 		return aitemstack[par1];
 	}
@@ -86,14 +86,14 @@ public class InventoryPlayerTFC extends InventoryPlayer {
 	{
 		ItemStack[] aitemstack = this.mainInventory;
 
-		if (par1 >= this.mainInventory.length + 4)
+		if (par1 >= this.mainInventory.length + this.extraEquipInventory.length)
 		{
-		    par1-= this.mainInventory.length + 4;
-			aitemstack = this.extraEquipInventory;
+			aitemstack = this.armorInventory;
+			par1 -= this.mainInventory.length + this.extraEquipInventory.length;
 		}
 		else if(par1 >= this.mainInventory.length){
-			par1 -= this.mainInventory.length;
-			aitemstack = this.armorInventory;
+			par1-= aitemstack.length;
+			aitemstack = this.extraEquipInventory;
 		}
 		if (aitemstack[par1] != null)
 		{
@@ -139,14 +139,14 @@ public class InventoryPlayerTFC extends InventoryPlayer {
 	{
 		ItemStack[] aitemstack = this.mainInventory;
 
-		if (par1 >= this.mainInventory.length + 4)
+		if (par1 >= this.mainInventory.length + this.extraEquipInventory.length)
 		{
-		    par1-= this.mainInventory.length + 4;
-			aitemstack = this.extraEquipInventory;
+			aitemstack = this.armorInventory;
+			par1 -= this.mainInventory.length + this.extraEquipInventory.length;
 		}
 		else if(par1 >= this.mainInventory.length){
-			par1 -= this.mainInventory.length;
-			aitemstack = this.armorInventory;
+			par1-= aitemstack.length;
+			aitemstack = this.extraEquipInventory;
 		}
 
 
@@ -191,8 +191,6 @@ public class InventoryPlayerTFC extends InventoryPlayer {
 				this.extraEquipInventory[i] = null;
 			}
 		}
-    NBTTagList derp = new NBTTagList();
-    this.player.getEntityData().setTag("ExtraInventory", derp);
 		super.dropAllItems();
 	}
 
@@ -217,14 +215,14 @@ public class InventoryPlayerTFC extends InventoryPlayer {
 
 		ItemStack[] aitemstack = this.mainInventory;
 
-		if (par1 >= this.mainInventory.length + 4)
+		if (par1 >= this.mainInventory.length + this.extraEquipInventory.length)
 		{
-		    par1-= this.mainInventory.length + 4;
-			aitemstack = this.extraEquipInventory;
+			par1 -= this.mainInventory.length + this.extraEquipInventory.length;
+			aitemstack = this.armorInventory;
 		}
 		else if(par1 >= this.mainInventory.length){
-			par1 -= this.mainInventory.length;
-			aitemstack = this.armorInventory;
+			par1-= aitemstack.length;
+			aitemstack = this.extraEquipInventory;
 		}
 
 		aitemstack[par1] = par2ItemStack;
@@ -270,7 +268,7 @@ public class InventoryPlayerTFC extends InventoryPlayer {
 		for (i = 0; i < extraEquipInventory.length; i++)
 		{
 			ItemStack is = extraEquipInventory[i];
-			if (is != null && is.stackSize != 0)
+			if (is != null)
 			{
 				nbt = new NBTTagCompound();
 				nbt.setByte("Slot", (byte) i);
