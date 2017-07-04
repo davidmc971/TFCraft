@@ -4,7 +4,6 @@ import net.minecraft.world.World;
 
 import com.bioxx.tfc.api.TFCOptions;
 
-import net.minecraftforge.common.DimensionManager; 
 
 public class TFC_Time
 {
@@ -35,7 +34,6 @@ public class TFC_Time
 	public static int currentMonth;
 	public static int currentYear;
 	private static long time;
-	private static long MainWorldTime;
 
 	public static final int JANUARY = 10;
 	public static final int FEBRUARY = 11;
@@ -88,15 +86,6 @@ public class TFC_Time
 		{
 			world.getWorldInfo().setWorldTime(startTime);
 			world.getWorldInfo().incrementTotalWorldTime(startTime);
-		}
-		if(!world.isRemote)
-		{
-			MainWorldTime = DimensionManager.getWorld(0).getWorldInfo().getWorldTime();
-			if(time != MainWorldTime)
-			{
-			world.getWorldInfo().setWorldTime(MainWorldTime);
-			world.getWorldInfo().incrementTotalWorldTime(MainWorldTime);
-			}
 		}
 
 		int m = getMonth();
