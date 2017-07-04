@@ -107,7 +107,6 @@ public class EntityLivingHandler
 				{
 					player.addPotionEffect(new PotionEffect(Potion.digSlowdown.id, 20, 1));
 					player.addPotionEffect(new PotionEffect(Potion.weakness.id, 20, 1));
-					player.addPotionEffect(new PotionEffect(2, 20, 1));
 				}
 
 				//Scan the players inventory for any items that are too heavy to carry normally
