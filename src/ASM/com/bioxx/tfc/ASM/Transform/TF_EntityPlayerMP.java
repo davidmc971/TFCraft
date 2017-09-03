@@ -19,12 +19,12 @@ public class TF_EntityPlayerMP extends ClassTransformer
 		 * This removes the "this.getHealth() != this.lastHealth" part of the if statement
 		 */
 		List<InstrSet> nodes = new ArrayList<InstrSet>();
-		nodes.add(new InstrSet(new LineNumberNode(0, new LabelNode()), 59, InstrOpType.Remove));
-		nodes.add(new InstrSet(new LineNumberNode(0, new LabelNode()), 60, InstrOpType.Remove));
-		nodes.add(new InstrSet(new LineNumberNode(0, new LabelNode()), 61, InstrOpType.Remove));
-		nodes.add(new InstrSet(new LineNumberNode(0, new LabelNode()), 62, InstrOpType.Remove));
-		nodes.add(new InstrSet(new LineNumberNode(0, new LabelNode()), 63, InstrOpType.Remove));
-		nodes.add(new InstrSet(new LineNumberNode(0, new LabelNode()), 64, InstrOpType.Remove));
+		nodes.add(new InstrSet(new LineNumberNode(0, new LabelNode()), 72, InstrOpType.Remove));
+		nodes.add(new InstrSet(new LineNumberNode(0, new LabelNode()), 73, InstrOpType.Remove));
+		nodes.add(new InstrSet(new LineNumberNode(0, new LabelNode()), 74, InstrOpType.Remove));
+		nodes.add(new InstrSet(new LineNumberNode(0, new LabelNode()), 75, InstrOpType.Remove));
+		nodes.add(new InstrSet(new LineNumberNode(0, new LabelNode()), 76, InstrOpType.Remove));
+		nodes.add(new InstrSet(new LineNumberNode(0, new LabelNode()), 77, InstrOpType.Remove));
 
 		mcpMethodNodes.put("onUpdateEntity | ()V", new Patch(nodes, PatchOpType.Modify));
 		obfMethodNodes.put("i | ()V", new Patch(nodes, PatchOpType.Modify));
