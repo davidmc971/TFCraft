@@ -105,7 +105,7 @@ public class EntityDamageHandler
 		if(entity instanceof EntityPlayer)
         	{
             		EntityPlayer player = (EntityPlayer) entity;
-           		originalDamage = ISpecialArmor.ArmorProperties.ApplyArmor(player, player.inventory.armorInventory, damage, damagevalue * 0.048F)/0.048F;
+           		originalDamage = ISpecialArmor.ArmorProperties.ApplyArmor(player, player.inventory.armorInventory, source, originalDamage * 0.048F)/0.048F;
         	}
 		ItemStack[] armor = entity.getLastActiveItems();
 		int pierceRating = 0;
