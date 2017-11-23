@@ -19,6 +19,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
+import net.minecraftforge.common.ISpecialArmor;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
