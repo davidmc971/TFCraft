@@ -67,7 +67,7 @@ public class Recipes
 		vanillaRecipes();
 
 		//Wood Specific Stuff
-		for(int i = 0; i < Global.WOOD_ALL.length; i++)
+		for(int i = 0; i < Global.WOOD_ALL.length-2; i++)
 		{
 			GameRegistry.addRecipe(new ItemStack(doors[i]), "WW", "WW", "WW", 'W', new ItemStack(TFCItems.singlePlank, 1, i));
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TFCBlocks.chest, 1, i), "###", "# #", "###", '#', new ItemStack(TFCItems.singlePlank, 1, i)));

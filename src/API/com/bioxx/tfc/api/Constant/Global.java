@@ -82,7 +82,7 @@ public class Global
 		"Oak","Aspen","Birch","Chestnut",
 		"Douglas Fir","Hickory","Maple","Ash",
 		"Pine","Sequoia","Spruce","Sycamore",
-		"White Cedar","White Elm","Willow","Kapok","Acacia"
+		"White Cedar","White Elm","Willow","Kapok","Acacia","temp1","temp2"
 	};
 
 	public static final String SKILL_GENERAL_SMITHING = "skill.gensmith";

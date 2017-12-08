@@ -36,7 +36,7 @@ public class BlockCustomDoor extends BlockTerra
 			"Maple Door Lower","Maple Door Upper","Ash Door Lower","Ash Door Upper","Pine Door Lower","Pine Door Upper",
 			"Sequoia Door Lower","Sequoia Door Upper","Spruce Door Lower","Spruce Door Upper","Sycamore Door Lower","Sycamore Door Upper",
 			"White Cedar Door Lower","White Cedar Door Upper","White Elm Door Lower","White Elm Door Upper","Willow Door Lower","Willow Door Upper",
-			"Kapok Door Lower","Kapok Door Upper","Acacia Door Lower","Acacia Door Upper"};
+			"Kapok Door Lower","Kapok Door Upper","Acacia Door Lower","Acacia Door Upper","temp1 Door Lower","temp1 Door Upper","temp2 Door Lower","temp2 Door Upper"};
 
 	private IIcon[] icons = new IIcon[Global.WOOD_ALL.length * 2];
 	public BlockCustomDoor(int woodId)
