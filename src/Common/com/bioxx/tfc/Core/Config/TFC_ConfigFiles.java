@@ -348,6 +348,8 @@ public class TFC_ConfigFiles
 
 		generalConfig.setCategoryLanguageKey(GENERAL, "config.gui.TFCConfig.general");
 
+		enableSmallerBiome = generalConfig.getBoolean("enableSmallerBiome", GENERAL, enableSmallerBiome, "Enable smaller stone biomes for TFC, ease the pain in exploration.", "config.gui.TFCConfig.general.enableSmallerBiome");
+
 		if (craftingConfig.hasCategory("nei hiding")) generalConfig.get(GENERAL, "enableNEIHiding", enableNEIHiding).set(craftingConfig.getBoolean("enableNEIHiding", "nei hiding", enableNEIHiding, ""));
 
 		enableNEIHiding = generalConfig.getBoolean("enableNEIHiding", GENERAL, enableNEIHiding, "Set to false to show hidden items in NEI. Note that most of these items were hidden to prevent players from cheating them in and crashing their game.");

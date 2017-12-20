@@ -9,6 +9,8 @@ package com.bioxx.tfc.api;
 public class TFCOptions
 {
 	// General
+	public static boolean enableSmallerBiome = false;
+
 	public static boolean enableNEIHiding = true;
 	public static boolean enablePowderKegs = true;
 	public static boolean enableBetterGrass = true;

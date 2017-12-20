@@ -7,9 +7,11 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
+import com.bioxx.tfc.api.TFCOptions;
 import com.bioxx.tfc.TerraFirmaCraft;
 import com.bioxx.tfc.WorldGen.DataLayer;
 import com.bioxx.tfc.WorldGen.GenLayers.*;
+
 
 public abstract class GenRockLayer extends GenLayerTFC
 {
@@ -33,7 +35,15 @@ public abstract class GenRockLayer extends GenLayerTFC
 		drawImage(512, layer, "Rock 5");
 		layer = new GenLayerSmoothTFC(1000L, layer);
 		drawImage(512, layer, "Rock 6");
-		for (int zoomLevel = 0; zoomLevel < 5; ++zoomLevel)
+
+    int maxzoom;
+    if (TFCOptions.enableSmallerBiome) {
+      maxzoom = 4;
+    } else {
+      maxzoom = 5;
+    }
+
+		for (int zoomLevel = 0; zoomLevel < maxzoom; ++zoomLevel)
 		{
 			layer = new GenLayerZoomTFC(1000 + zoomLevel, layer);
 			drawImage(512, layer, "Rock "+(7+zoomLevel));
