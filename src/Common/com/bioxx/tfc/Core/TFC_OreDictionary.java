@@ -43,7 +43,7 @@ public class TFC_OreDictionary
 		//Wood Crafts
 		OreDictionary.registerOre("chestWood", new ItemStack(TFCBlocks.chest, 1, WILD));
 		OreDictionary.registerOre("barrelWood", new ItemStack(TFCBlocks.barrel, 1, WILD));
-
+    /*
 		//Ores
 		OreDictionary.registerOre("oreNormalCopper", new ItemStack(TFCItems.oreChunk, 1, 0)); //Native Copper
 		OreDictionary.registerOre("oreNormalCopper", new ItemStack(TFCItems.oreChunk, 1, 9)); //Malachite
@@ -110,7 +110,7 @@ public class TFC_OreDictionary
 		OreDictionary.registerOre("oreSmallZinc", new ItemStack(TFCItems.smallOreChunk, 1, 12)); //Sphalerite
 		OreDictionary.registerOre("oreRichZinc", new ItemStack(TFCItems.oreChunk, 1, 47)); //Sphalerite
 		OreDictionary.registerOre("orePoorZinc", new ItemStack(TFCItems.oreChunk, 1, 61)); //Sphalerite
-
+    */
 		OreDictionary.registerOre("oreCoal", new ItemStack(TFCItems.oreChunk, 1, 14)); //Bituminous Coal
 		OreDictionary.registerOre("oreCoal", new ItemStack(TFCItems.oreChunk, 1, 15)); //Lignite
 
@@ -352,13 +352,13 @@ public class TFC_OreDictionary
 		OreDictionary.registerOre("stone", new ItemStack(TFCBlocks.stoneIgIn, 1, WILD));
 		OreDictionary.registerOre("stone", new ItemStack(TFCBlocks.stoneMM, 1, WILD));
 		OreDictionary.registerOre("stone", new ItemStack(TFCBlocks.stoneSed, 1, WILD));
-
+/*
 		//Cobblestone
 		OreDictionary.registerOre("cobblestone", new ItemStack(TFCBlocks.stoneIgExCobble, 1, WILD));
 		OreDictionary.registerOre("cobblestone", new ItemStack(TFCBlocks.stoneIgInCobble, 1, WILD));
 		OreDictionary.registerOre("cobblestone", new ItemStack(TFCBlocks.stoneMMCobble, 1, WILD));
 		OreDictionary.registerOre("cobblestone", new ItemStack(TFCBlocks.stoneSedCobble, 1, WILD));
-
+*/
 		OreDictionary.registerOre("stoneCobble", new ItemStack(TFCBlocks.stoneIgExCobble, 1, WILD));
 		OreDictionary.registerOre("stoneCobble", new ItemStack(TFCBlocks.stoneIgInCobble, 1, WILD));
 		OreDictionary.registerOre("stoneCobble", new ItemStack(TFCBlocks.stoneMMCobble, 1, WILD));
