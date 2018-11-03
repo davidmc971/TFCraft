@@ -1,6 +1,13 @@
 TerraFirmaCraft
 =======
 
+***This project is the old, 1.7.10 TFC. It's not going to get any content updates.
+Existing bugs might be fixed, but no guaranties. Consider this project deprecated.***
+
+[For active development, check out the 1.12+ version.](https://github.com/TerraFirmaCraft/TerraFirmaCraft)
+
+---
+
 ## Table of Contents
 
 * [About](#about)
