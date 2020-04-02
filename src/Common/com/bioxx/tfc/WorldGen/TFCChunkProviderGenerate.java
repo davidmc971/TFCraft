@@ -124,6 +124,8 @@ public class TFCChunkProviderGenerate extends ChunkProviderGenerate
 		this.metaBig = new byte[16*16*256];
 	}
 
+	//TODO: provideChunk has to run in different Thread and we want to change the Arrays above
+
 	@Override
 	public Chunk provideChunk(int chunkX, int chunkZ)
 	{
