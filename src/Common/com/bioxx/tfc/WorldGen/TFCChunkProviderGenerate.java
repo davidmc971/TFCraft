@@ -38,19 +38,11 @@ public class TFCChunkProviderGenerate extends ChunkProviderGenerate
 	/** RNG. */
 	private Random rand;
 
-	/** A NoiseGeneratorOctaves used in generating terrain */
+	/** Some NoiseGeneratorOctaves used in generating terrain */
 	private NoiseGeneratorOctaves noiseGen1;
-
-	/** A NoiseGeneratorOctaves used in generating terrain */
 	private NoiseGeneratorOctaves noiseGen2;
-
-	/** A NoiseGeneratorOctaves used in generating terrain */
 	private NoiseGeneratorOctaves noiseGen3;
-
-	/** A NoiseGeneratorOctaves used in generating terrain */
 	private NoiseGeneratorOctaves noiseGen4;
-
-	/** A NoiseGeneratorOctaves used in generating terrain */
 	public NoiseGeneratorOctaves noiseGen6;
 	public NoiseGeneratorOctaves mobSpawnerNoise;
 
@@ -71,7 +63,6 @@ public class TFCChunkProviderGenerate extends ChunkProviderGenerate
 	private DataLayer[] rainfallLayer;
 	private DataLayer[] stabilityLayer;
 	private DataLayer[] drainageLayer;
-
 
 	private Block[] idsTop;
 	private Block[] idsBig;
@@ -104,6 +95,8 @@ public class TFCChunkProviderGenerate extends ChunkProviderGenerate
 	private MapGenRavineTFC surfaceRavineGen = new MapGenRavineTFC(125, 30);//surface
 	private MapGenRavineTFC ravineGen = new MapGenRavineTFC(20, 50);//deep
 	private MapGenRiverRavine riverRavineGen = new MapGenRiverRavine();
+	
+	long profilingTime = 0;
 
 	public TFCChunkProviderGenerate(World par1World, long par2, boolean par4)
 	{
@@ -129,6 +122,7 @@ public class TFCChunkProviderGenerate extends ChunkProviderGenerate
 	@Override
 	public Chunk provideChunk(int chunkX, int chunkZ)
 	{
+		this.profilingTime = System.nanoTime();
 		this.rand.setSeed(chunkX * 341873128712L + chunkZ * 132897987541L);
 
 		//	To reduce GC churn, we allocate these arrays once in the
@@ -181,6 +175,8 @@ public class TFCChunkProviderGenerate extends ChunkProviderGenerate
 		TFC_Core.getCDM(worldObj).addData(chunk, data);
 		//chunk.heightMap = chunkHeightMap;
 		chunk.generateSkylightMap();
+		profilingTime = (System.nanoTime()-profilingTime);
+		System.out.println("provideChunk("+chunkX+","+chunkZ+") took "+((double)(profilingTime/1000000d))+" ms");
 		return chunk;
 	}
 
